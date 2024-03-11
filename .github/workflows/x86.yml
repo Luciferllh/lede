@@ -52,7 +52,7 @@ jobs:
         run: 
           rm -f .config*
           touch .config
-          cat >> .config << EOF
+          cat > .config << EOF
           CONFIG_TARGET_x86=y
           CONFIG_TARGET_x86_64=y
           CONFIG_TARGET_x86_64_DEVICE_generic=y
@@ -237,7 +237,6 @@ jobs:
           CONFIG_boost-variant-release=y
 
           EOF
-
 
           sed -i 's/^[ \t]*//g' ./.config
           make defconfig
